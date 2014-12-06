@@ -1,0 +1,24 @@
+{{ partial "header.html" . }}
+
+<body class="post">
+
+{{ partial "nav.html" . }}
+
+<!-- Main -->
+<article id="main">
+  <header class="special container">
+    <span class="icon fa-laptop"></span>
+    <h2>Behold the <strong>Left Sidebar</strong></h2>
+    <p>Where things on the left ... accompany that on the right.</p>
+  </header>
+
+  <section class="wrapper style4 container">
+
+    {{ .Content }}
+
+    {{ template "_internal/disqus.html" . }}
+
+  </section>
+</article>
+
+{{ partial "footer.html" . }}

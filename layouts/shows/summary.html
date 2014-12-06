@@ -1,0 +1,25 @@
+<section class="show-summary">
+  <header>
+    <h3>{{ .Title }}</h3>
+    <p>with
+      {{ $guests := .Params.guests}}
+      {{ $last := sub (len $guests) 1 }}
+      {{ range $index, $guest := $guests }}
+      {{ if eq $index 0 }}
+      {{ $guest }}
+      {{ else if lt $index $last }}
+      , {{ $guest }}
+      {{ else }}
+      and {{ $guest }}
+      {{ end }}
+      {{ end }}
+    </p>
+  </header>
+  <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+  <p>{{ .Summary }}</p>
+  <audio src="{{ .Params.audiourl }}" preload="metadata" controls>
+    Your browser isn't happy with the audio player, you're just going to have to <a href="{{ .Params.audiourl }}">download it</a>.
+  </audio>
+  <p><a href="{{ .Params.audiourl }}">Download</a></p>
+  <hr>
+</section>

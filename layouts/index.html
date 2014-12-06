@@ -1,0 +1,80 @@
+{{ partial "header.html" . }}
+
+<body class="index">
+
+  {{ partial "nav-banner.html" . }}
+
+  <!-- Banner -->
+  <section id="banner">
+
+    <!--
+    ".inner" is set up as an inline-block so it automatically expands
+    in both directions to fit whatever's inside it. This means it won't
+    automatically wrap lines, so be sure to use line breaks where
+    appropriate (<br />).
+  -->
+    <div class="inner">
+      <header>
+        <img src="/images/fsharp-show-logo.png">
+      </header>
+      <footer>
+        <ul class="buttons vertical">
+          <li><a href="#main" class="button fit scrolly">Latest show</a></li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </section>
+
+  <!-- Main -->
+  <article id="main">
+
+    <header class="special container">
+      <span class="icon fa-microphone"></span>
+      <h2>A podcast dedicated to <strong>F#</strong></h2>
+        <p>Now you can experience <strong>F#</strong> in the car, on your bike and in the shower.</p>
+        </header>
+
+        <!-- Shows -->
+        <section class="wrapper style3 special">
+
+          <header class="major">
+            <h2>The latest <strong>shows</strong></h2>
+          </header>
+          {{ $shows := where .Data.Pages "Section" "shows" | first 4 }}
+          {{ range $index, $show := $shows }}
+
+            {{ $newRow := mod $index 2 | eq 0 }}
+            {{ if $newRow }}
+            <div class="row">
+            {{ end }}
+
+              <div class="6u 12u(2)">
+                  {{ $show.Render "summary"}}
+              </div>
+
+            {{ if $newRow }}
+            </div>
+            {{ end }}
+
+          {{ end }}
+
+
+          <footer class="major">
+            <ul class="buttons">
+              <li><a href="/shows" class="button">See More</a></li>
+            </ul>
+          </footer>
+
+        </section>
+
+      </article>
+
+      <!-- CTA -->
+      <section id="cta">
+        <header>
+          <h2>Thanks for <strong>listening</strong>!</h2>
+        </header>
+      </section>
+{{ partial "footer.html" . }}
