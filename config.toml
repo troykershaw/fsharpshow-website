@@ -1,6 +1,7 @@
 BaseUrl = "http://fsharpshow.com"
 LanguageCode = "en-us"
 Title = "The F# Show"
+disqusShortname = "fsharpshow"
 
 [params]
   description = "This is a description"

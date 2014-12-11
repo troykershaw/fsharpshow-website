@@ -1,6 +1,10 @@
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Lato:300,400,900");
 
+	.newsletter {
+		max-width: 600px;
+		margin: 0 auto;
+	}
 
 	.show-summary {
 		padding: 1em;
@@ -131,7 +135,7 @@
 	}
 
 	header.special {
-		margin-bottom: 5em;
+		margin-bottom: 1em;
 		padding-top: 7em;
 		position: relative;
 		text-align: center;

@@ -6,19 +6,16 @@
 
 <article id="show-main">
   <header class="special container">
-    <h2>{{ .Title }}</h2>
-    <p>with {{ .Render "guest-names" }}</p>
-    <img class="show-image" src="{{ .Site.Params.cdnpath }}/images/{{ .Params.image }}" alt="" />
+    {{ .Render "summary" }}
   </header>
 
   <section class="wrapper style4">
 
     {{ .Content }}
 
-  </section>
-
-  <section class="comments">
+    <h2>Comments</h2>
     {{ template "_internal/disqus.html" . }}
+
   </section>
 </article>
 
