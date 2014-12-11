@@ -7,22 +7,15 @@
   <!-- Banner -->
   <section id="banner">
 
-    <!--
-    ".inner" is set up as an inline-block so it automatically expands
-    in both directions to fit whatever's inside it. This means it won't
-    automatically wrap lines, so be sure to use line breaks where
-    appropriate (<br />).
-  -->
     <div class="inner">
       <header>
-        <img src="/images/fsharp-show-logo.png">
+        <img src="{{ .Site.Params.cdnpath }}/images/fsharp-show-logo.png">
       </header>
       <footer>
         <ul class="buttons vertical">
-          <li><a href="#main" class="button fit scrolly">Latest show</a></li>
+          <li><a href="#latest-shows" class="button fit scrolly">Latest show</a></li>
         </ul>
       </footer>
-
     </div>
 
   </section>
@@ -30,51 +23,51 @@
   <!-- Main -->
   <article id="main">
 
-    <header class="special container">
-      <span class="icon fa-microphone"></span>
-      <h2>A podcast dedicated to <strong>F#</strong></h2>
+    <section class="special container">
+      <header class="special">
+        <span class="icon fa-microphone"></span>
+        <h2>A podcast dedicated to <strong>F#</strong></h2>
         <p>Now you can experience <strong>F#</strong> in the car, on your bike and in the shower.</p>
-        </header>
+        <p>
+          Hosted by <a href="{{ .Site.Params.HostsUrl }}">{{ .Site.Params.HostsName }}</a>
+        </p>
+      </header>
 
-        <!-- Shows -->
-        <section class="wrapper style3 special">
+      {{ partial "social.html" . }}
 
-          <header class="major">
-            <h2>The latest <strong>shows</strong></h2>
-          </header>
-          {{ $shows := where .Data.Pages "Section" "shows" | first 4 }}
-          {{ range $index, $show := $shows }}
+    </section>
 
-            {{ $newRow := mod $index 2 | eq 0 }}
-            {{ if $newRow }}
-            <div class="row">
-            {{ end }}
+    <!-- Shows -->
+    <section class="wrapper style3 special" id="latest-shows" >
 
-              <div class="6u 12u(2)">
-                  {{ $show.Render "summary"}}
-              </div>
+      <header class="major">
+        <h2>The latest <strong>show</strong></h2>
+      </header>
 
-            {{ if $newRow }}
-            </div>
-            {{ end }}
+      {{ range where .Data.Pages "Section" "shows" | first 4 }}
 
-          {{ end }}
+        <div class="show-summary-front">
+            {{ .Render "summary"}}
+        </div>
 
+      {{ end }}
 
-          <footer class="major">
-            <ul class="buttons">
-              <li><a href="/shows" class="button">See More</a></li>
-            </ul>
-          </footer>
+      <!-- Don't need this yet, too few shows -->
+      <!-- <footer class="major">
+        <ul class="buttons">
+          <li><a href="/shows" class="button">See More</a></li>
+        </ul>
+      </footer> -->
 
-        </section>
+    </section>
 
-      </article>
+  </article>
 
-      <!-- CTA -->
-      <section id="cta">
-        <header>
-          <h2>Thanks for <strong>listening</strong>!</h2>
-        </header>
-      </section>
-{{ partial "footer.html" . }}
+  <!-- CTA -->
+  <section id="cta">
+    <header>
+      <h2>Thanks for <strong>listening</strong>!</h2>
+    </header>
+  </section>
+
+  {{ partial "footer.html" . }}

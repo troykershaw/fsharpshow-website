@@ -5,7 +5,21 @@
 	.show-summary {
 		padding: 1em;
 		margin: 1em;
-		background-color: #c3c3c3;
+		text-align: left;
+	}
+	.show-summary-front {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.show-image {
+		width: 100%;
+		max-width: 400px;
+		border: 5px #ffffff solid;
+	}
+
+	.show-image-link {
+		border: none;
 	}
 
 /* Basic */
@@ -780,12 +794,12 @@
 	@keyframes reveal-banner { 0% { opacity: 0; } 100% { opacity: 1; } }
 
 	#banner {
-		background-attachment: scroll, scroll, scroll, fixed;
+		background-attachment: scroll, fixed;
 		background-color: #645862;
-		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../images/banner.jpg");
-		background-position: bottom left, bottom right, top left, top center;
-		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
-		background-size: 25em, 25em, auto, cover;
+		background-image: url("images/overlay.png"), url("http://cdn.fsharpshow.com/images/banner.jpg");
+		background-position: top left, top center;
+		background-repeat: repeat, no-repeat;
+		background-size: auto, cover;
 		color: white;
 		cursor: default;
 		padding: 4em 0;
@@ -882,12 +896,12 @@
 /* CTA */
 
 	#cta {
-		background-attachment: scroll, scroll, scroll, fixed;
+		background-attachment: scroll, fixed;
 		background-color: #645862;
-		background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../images/banner.jpg");
-		background-position: top left, top right, top left, bottom center;
-		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
-		background-size: 25em, 25em, auto, cover;
+		background-image: url("images/overlay.png"), url("../images/banner.jpg");
+		background-position: top left, bottom center;
+		background-repeat: repeat, no-repeat;
+		background-size: auto, cover;
 		color: white;
 		padding: 5em;
 		text-align: center;

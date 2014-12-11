@@ -94,7 +94,7 @@
 			}
 
 		// Scrolly links.
-			$('.scrolly').scrolly(1000, -10);
+			$('.scrolly').scrolly(1000, 56);
 
 		// Dropdowns.
 			$('#nav > ul').dropotron({

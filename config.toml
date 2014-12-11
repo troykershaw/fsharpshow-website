@@ -1,3 +1,15 @@
-baseurl = "http://fsharpshow"
-languageCode = "en-us"
-title = "The F# Show"
+BaseUrl = "http://fsharpshow.com"
+LanguageCode = "en-us"
+Title = "The F# Show"
+
+[params]
+  description = "This is a description"
+  summary = "This is a summary"
+  hostsname = "Troy Kershaw"
+  hostsurl = "http://troykershaw.com"
+  hostsemail = "hello@troykershaw.com"
+  email = "fsharpshow@troykershaw.com"
+  cdnpath = "http://cdn.fsharpshow.com"
+  twitterurl = "https://twitter.com/fsharpshow"
+  itunesurl = ""
+  keywords = "F#,FSharp,.NET,functional,programming"

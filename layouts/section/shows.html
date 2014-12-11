@@ -4,15 +4,21 @@
 
   {{ partial "nav.html" . }}
 
-<section id="main">
-  <div>
-    <h1 id="title">{{ .Title }}</h1>
+<article id="show-main">
+  <header class="special container">
+    <h2>{{ .Title }}</h2>
+  </header>
+
+  <section class="wrapper style4">
+
     <ul id="list">
-      {{ range .Data.Pages }}
-      {{ .Render "summary"}}
+      {{ range where .Data.Pages "Section" "shows" }}
+        {{ .Render "summary"}}
       {{ end }}
     </ul>
-  </div>
-</section>
+
+  </section>
+
+</article>
 
 {{ partial "footer.html" }}

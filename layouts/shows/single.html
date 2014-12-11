@@ -1,23 +1,24 @@
 {{ partial "header.html" . }}
 
-<body class="post">
+<body class="show">
 
 {{ partial "nav.html" . }}
 
-<!-- Main -->
-<article id="main">
+<article id="show-main">
   <header class="special container">
-    <span class="icon fa-laptop"></span>
-    <h2>Behold the <strong>Left Sidebar</strong></h2>
-    <p>Where things on the left ... accompany that on the right.</p>
+    <h2>{{ .Title }}</h2>
+    <p>with {{ .Render "guest-names" }}</p>
+    <img class="show-image" src="{{ .Site.Params.cdnpath }}/images/{{ .Params.image }}" alt="" />
   </header>
 
-  <section class="wrapper style4 container">
+  <section class="wrapper style4">
 
     {{ .Content }}
 
-    {{ template "_internal/disqus.html" . }}
+  </section>
 
+  <section class="comments">
+    {{ template "_internal/disqus.html" . }}
   </section>
 </article>
 

@@ -1,0 +1,48 @@
+{{ $dateFormat := "Mon, 02 Jan 2006 15:04:05 MST" }}
+<rss xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     version="2.0">
+  <channel>
+    <link>{{ .Site.BaseUrl }}</link>
+    <language>{{ .Site.LanguageCode }}</language>
+    <copyright>&#xA9; 2014</copyright>
+    <webMaster>{{ .Site.Params.email }} ({{ .Site.Title }})</webMaster>
+    <managingEditor>{{ .Site.Params.email }} ({{ .Site.Title }})</managingEditor>
+    <image>
+      <url>{{ .Site.Params.cdnpath }}/images/podcast-logo.jpg</url>
+      <title>{{ .Site.Title }} logo</title>
+      <link>{{ .Site.BaseUrl }}</link>
+    </image>
+    <itunes:owner>
+      <itunes:name>{{ .Site.Params.hostsname }}</itunes:name>
+      <itunes:email>{{ .Site.Params.hostsemail }}</itunes:email>
+    </itunes:owner>
+    <itunes:category text="Technology">
+      <itunes:category text="Tech News" />
+      <itunes:category text="Software How-To" />
+    </itunes:category>
+    <itunes:keywords>{{ .Site.Params.keywords }}</itunes:keywords>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="{{ .Site.Params.cdnpath }}/images/podcast-logo-itunes.jpg" />
+    <atom:link href="{{ .Url }}" rel="self" type="application/rss+xml" />
+    <pubDate>{{ .Site.LastChange.Format $dateFormat }}</pubDate>
+    <title>{{ .Site.Title }}</title>
+    <itunes:author>{{ .Site.Title }}</itunes:author>
+    <description>{{ .Site.Params.description }}</description>
+    <itunes:summary>{{ .Site.Params.summary }}</itunes:summary>
+    <itunes:subtitle>{{ .Site.Params.description }}</itunes:subtitle>
+    <lastBuildDate>{{ .Site.LastChange.Format $dateFormat }}</lastBuildDate>
+    {{ range where .Data.Pages "Section" "shows" }}
+    <item>
+      <title>{{ .Title }}</title>
+      <description>{{ .Description }}</description>
+      <itunes:summary>{{ .Description }}</itunes:summary>
+      <itunes:subtitle>{{ .Params.subtitle }}</itunes:subtitle>
+      <enclosure url="{{ .Site.Params.cdnpath }}/shows/{{ .Params.audiourl }}" type="audio/mpeg" length="1" />
+      <guid>{{ .Params.guid }}</guid>
+      <itunes:duration>{{ .Params.duration }}</itunes:duration>
+      <pubDate>{{ .Date.Format $dateFormat }}</pubDate>
+    </item>
+    {{ end }}
+  </channel>
+</rss>
