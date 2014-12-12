@@ -6,17 +6,56 @@
 
 <article id="show-main">
   <header class="special container">
-    {{ .Render "summary" }}
+    <h1>{{ .Title }}</h1>
+    <h2>with {{ .Render "guest-names" }}</h2>
+    <div class="row">
+      <div class="4u 12u(2)">
+        <img class="show-image" src="{{ .Site.Params.cdnpath }}/images/{{ .Params.image }}" alt="" />
+      </div>
+      <div class="8u 12u(2)">
+        <p>{{ .Summary }}</p>
+        <audio src="{{ .Site.Params.cdnpath }}/shows/{{ .Params.audiourl }}" preload="metadata" controls>
+          Your browser isn't happy with the audio player, you're just going to have to <a href="{{ .Site.Params.cdnpath }}/shows/{{ .Params.audiourl }}">download it</a>.
+        </audio>
+        <p><a href="{{ .Site.Params.cdnpath }}/shows/{{ .Params.audiourl }}">Download</a></p>
+      </div>
+    </div>
+
   </header>
 
-  <section class="wrapper style4">
+  <section class="wrapper style4 container tabs">
+    <div id="tabs">
+      <ul>
+        <li>
+          <a href="#show-notes">
+            <span class="icon fa-pencil"/>
+            Show Notes
+          </a>
+        </li>
+        <li>
+          <a href="#transcription">
+            <span class="icon fa-eye"/>
+            Transcription
+          </a>
+        </li>
+      </ul>
 
-    {{ .Content }}
+      {{ .Content }}
 
+    </div>
+  </section>
+  <section class="wrapper style4 container">
     <h2>Comments</h2>
     {{ template "_internal/disqus.html" . }}
-
   </section>
 </article>
 
+<script type="text/javascript">
+
+  $("#tabs tab").replaceWith(function() { return "<div>" + this.innerHTML + "</div>"; });
+
+  $('#tabs').responsiveTabs({
+    startCollapsed: 'accordion'
+  });
+</script>
 {{ partial "footer.html" . }}

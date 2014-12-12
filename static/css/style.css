@@ -1,31 +1,6 @@
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Lato:300,400,900");
 
-	.newsletter {
-		max-width: 600px;
-		margin: 0 auto;
-	}
-
-	.show-summary {
-		padding: 1em;
-		margin: 1em;
-		text-align: left;
-	}
-	.show-summary-front {
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.show-image {
-		width: 100%;
-		max-width: 400px;
-		border: 5px #ffffff solid;
-	}
-
-	.show-image-link {
-		border: none;
-	}
-
 /* Basic */
 
 	body, #skel-layers-wrapper {
@@ -74,7 +49,7 @@
 	}
 
 	p, ul, ol, dl, table, blockquote {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -870,10 +845,6 @@
 /* Main */
 
 	#main {
-		background-image: url("images/dark-tl.svg"), url("images/dark-tr.svg"), url("images/dark-bl.svg"), url("images/dark-br.svg");
-		background-position: top left, top right, bottom left, bottom right;
-		background-repeat: no-repeat;
-		background-size: 25em;
 		padding: 2em 0 0 0;
 	}
 
@@ -902,7 +873,7 @@
 	#cta {
 		background-attachment: scroll, fixed;
 		background-color: #645862;
-		background-image: url("images/overlay.png"), url("../images/banner.jpg");
+		background-image: url("images/overlay.png"), url("http://cdn.fsharpshow.com/images/banner.jpg");
 		background-position: top left, bottom center;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
@@ -1098,3 +1069,83 @@
 			display: inline-block;
 			width: 5em;
 		}
+
+
+	/* My stuff */
+	h1 {
+		font-size: 200%;
+		margin-bottom: 0;
+	}
+	#logo {
+		font-size: 100%;
+	}
+	.newsletter {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.show-summary {
+		padding: 1em;
+		margin: 1em;
+		text-align: left;
+	}
+	.show-summary-front {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.show-image {
+		width: 100%;
+		max-width: 400px;
+		border: 5px #ffffff solid;
+	}
+
+	.show-image-link {
+		border: none;
+	}
+
+	#show-main .container {
+		margin-bottom: 0em;
+	}
+	#show-main .container:first-child {
+		margin-bottom: 2em;
+	}
+
+	#show-main header h2 {
+		text-transform: none;
+		margin-bottom: 1em;
+	}
+
+	#show-main .row {
+		text-align: left;
+	}
+
+	/* Tabs */
+	.container.tabs {
+		padding: 0;
+	}
+	.r-tabs .r-tabs-nav {
+		padding: 0 3em;
+		background-color: #333333;
+	}
+	.r-tabs .r-tabs-tab a {
+		padding: 1em;
+		margin: 0;
+		font-size: 140%;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	.r-tabs-tab a {
+		color: #ffffff;
+		border-bottom: none;
+	}
+	.r-tabs-tab.r-tabs-state-active {
+		background-color: #ffffff;
+	}
+	.r-tabs-tab.r-tabs-state-active a {
+		color: #3fb1a3;
+	}
+	.r-tabs-panel {
+		margin: 3em 3em 0 3em;
+	}

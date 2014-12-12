@@ -9,7 +9,7 @@
     <webMaster>{{ .Site.Params.email }} ({{ .Site.Title }})</webMaster>
     <managingEditor>{{ .Site.Params.email }} ({{ .Site.Title }})</managingEditor>
     <image>
-      <url>{{ .Site.Params.cdnpath }}/images/podcast-logo.jpg</url>
+      <url>{{ .Site.Params.cdnpath }}/images/fsharp-show-logo-rss.jpg</url>
       <title>{{ .Site.Title }} logo</title>
       <link>{{ .Site.BaseUrl }}</link>
     </image>
@@ -23,7 +23,7 @@
     </itunes:category>
     <itunes:keywords>{{ .Site.Params.keywords }}</itunes:keywords>
     <itunes:explicit>no</itunes:explicit>
-    <itunes:image href="{{ .Site.Params.cdnpath }}/images/podcast-logo-itunes.jpg" />
+    <itunes:image href="{{ .Site.Params.cdnpath }}/images/fsharp-show-logo-itunes.png" />
     <atom:link href="{{ .Url }}" rel="self" type="application/rss+xml" />
     <pubDate>{{ .Site.LastChange.Format $dateFormat }}</pubDate>
     <title>{{ .Site.Title }}</title>
@@ -36,12 +36,19 @@
     <item>
       <title>{{ .Title }}</title>
       <description>{{ .Description }}</description>
+      <link>{{ .Permalink }}</link>
       <itunes:summary>{{ .Description }}</itunes:summary>
       <itunes:subtitle>{{ .Params.subtitle }}</itunes:subtitle>
       <enclosure url="{{ .Site.Params.cdnpath }}/shows/{{ .Params.audiourl }}" type="audio/mpeg" length="1" />
       <guid>{{ .Params.guid }}</guid>
       <itunes:duration>{{ .Params.duration }}</itunes:duration>
       <pubDate>{{ .Date.Format $dateFormat }}</pubDate>
+      <itunes:image href="{{ .Site.Params.cdnpath }}/images/fsharp-show-logo-itunes.png" />
+      <image>
+        <url>{{ .Site.Params.cdnpath }}/images/fsharp-show-logo-rss.jpg</url>
+        <title>{{ .Site.Title }} logo</title>
+        <link>{{ .Permalink }}</link>
+      </image>
     </item>
     {{ end }}
   </channel>
