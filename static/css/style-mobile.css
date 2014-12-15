@@ -121,7 +121,7 @@
 /* Banner */
 
 	#banner {
-		background-size: 10em, 10em, auto, cover;
+		background-size: auto, cover;
 		padding: 3em 0;
 	}
 
@@ -146,7 +146,7 @@
 
 	#main {
 		background-size: 10em;
-		padding: 3.5em 0 2.5em 0;
+		padding: 3.5em 0 0 0;
 	}
 
 	body.index #main {
@@ -160,7 +160,7 @@
 /* CTA */
 
 	#cta {
-		background-size: 10em, 10em, auto, cover;
+		background-size: auto, cover;
 		padding: 3em 1.5em;
 	}
 

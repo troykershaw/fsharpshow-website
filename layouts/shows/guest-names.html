@@ -1,11 +1,1 @@
-{{ $guests := .Params.guests }}
-{{ $last := sub (len $guests) 1 }}
-{{ range $index, $guest := $guests }}
-  {{ if eq $index 0 }}
-    {{ $guest }}
-  {{ else if lt $index $last }}
-    , {{ $guest }}
-  {{ else }}
-    and {{ $guest }}
-  {{ end }}
-{{ end }}
+{{ $guests := .Params.guests }}{{ $last := sub (len $guests) 1 }}{{ range $index, $guest := $guests }}{{ if lt $index (sub $last 1) }}{{ $guest }}, {{ else if lt $index $last }}{{ $guest }} and {{ else }}{{ $guest }}{{ end }}{{ end }}

@@ -14,8 +14,8 @@
       </p>
     </a>
   </header>
-  <p>{{ .Summary }}</p>
-  <audio src="{{ .Site.Params.cdnpath }}/shows/{{ .Params.audiourl }}" preload="metadata" controls>
+  <p>{{ .Description }}</p>
+  <audio src="{{ .Site.Params.cdnpath }}/shows/{{ .Params.audiourl }}" controls>
     Your browser isn't happy with the audio player, you're just going to have to <a href="{{ .Site.Params.cdnpath }}/shows/{{ .Params.audiourl }}">download it</a>.
   </audio>
   <p><a href="{{ .Site.Params.cdnpath }}/shows/{{ .Params.audiourl }}">Download</a></p>

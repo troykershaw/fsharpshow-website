@@ -34,7 +34,7 @@
     <lastBuildDate>{{ .Site.LastChange.Format $dateFormat }}</lastBuildDate>
     {{ range where .Data.Pages "Section" "shows" }}
     <item>
-      <title>{{ .Title }}</title>
+      <title>{{ .Title }} with {{ .Render "guest-names" }}</title>
       <description>{{ .Description }}</description>
       <link>{{ .Permalink }}</link>
       <itunes:summary>{{ .Description }}</itunes:summary>

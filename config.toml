@@ -4,8 +4,8 @@ Title = "The F# Show"
 disqusShortname = "fsharpshow"
 
 [params]
-  description = "This is a description"
-  summary = "This is a summary"
+  description = "A podcast dedicated to F#"
+  summary = "A podcast dedicated to F#"
   hostsname = "Troy Kershaw"
   hostsurl = "http://troykershaw.com"
   hostsemail = "hello@troykershaw.com"
