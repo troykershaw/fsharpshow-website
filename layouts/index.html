@@ -1,6 +1,8 @@
 {{ partial "header.html" . }}
 
-<body class="index">
+<body class="index"
+      itemscope
+      itemtype="http://schema.org/RadioSeries">
 
   {{ partial "nav-banner.html" . }}
 
@@ -9,7 +11,9 @@
 
     <div class="inner">
       <header>
-        <img src="{{ .Site.Params.cdnpath }}/images/fsharp-show-logo.png">
+        <img src="{{ .Site.Params.cdnpath }}/images/fsharp-show-logo.png"
+             alt="The F# Show"
+             itemprop="name">
       </header>
       <footer>
         <ul class="buttons vertical">
@@ -29,7 +33,7 @@
         <h2>A podcast dedicated to <strong>F#</strong></h2>
         <p>Now you can experience <strong>F#</strong> in the car, on your bike and in the shower.</p>
         <p>
-          Hosted by <a href="{{ .Site.Params.HostsUrl }}">{{ .Site.Params.HostsName }}</a>
+          Hosted by <a href="{{ .Site.Params.hostsurl }}">{{ .Site.Params.hostsname }}</a>
         </p>
       </header>
 
@@ -38,7 +42,8 @@
     </section>
 
     <!-- Shows -->
-    <section class="wrapper style3 special" id="latest-shows" >
+    <section class="wrapper style3 special"
+             id="latest-shows">
 
       <header class="major">
         <h2>The latest <strong>show</strong></h2>

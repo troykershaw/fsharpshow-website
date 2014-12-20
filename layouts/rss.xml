@@ -10,7 +10,7 @@
     <managingEditor>{{ .Site.Params.email }} ({{ .Site.Title }})</managingEditor>
     <image>
       <url>{{ .Site.Params.cdnpath }}/images/fsharp-show-logo-rss.jpg</url>
-      <title>{{ .Site.Title }} logo</title>
+      <title>{{ .Site.Title }}</title>
       <link>{{ .Site.BaseUrl }}</link>
     </image>
     <itunes:owner>
@@ -46,7 +46,7 @@
       <itunes:image href="{{ .Site.Params.cdnpath }}/images/fsharp-show-logo-itunes.png" />
       <image>
         <url>{{ .Site.Params.cdnpath }}/images/fsharp-show-logo-rss.jpg</url>
-        <title>{{ .Site.Title }} logo</title>
+        <title>{{ .Site.Title }}</title>
         <link>{{ .Permalink }}</link>
       </image>
     </item>
