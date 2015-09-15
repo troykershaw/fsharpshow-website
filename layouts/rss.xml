@@ -1,4 +1,4 @@
-{{ $dateFormat := "Mon, 02 Jan 2006 15:04:05 MST" }}
+{{ $dateFormat := "Mon, 02 Jan 2006 15:04:05 -0700" }}
 <rss xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
      version="2.0">
@@ -10,7 +10,7 @@
     <managingEditor>{{ .Site.Params.email }} ({{ .Site.Title }})</managingEditor>
     <image>
       <url>{{ .Site.Params.cdnpath }}/images/fsharp-show-logo-rss.jpg</url>
-      <title>{{ .Site.Title }}</title>
+      <title>{{ .Site.Title }} | {{ .Site.Params.itunesdescription }}</title>
       <link>{{ .Site.BaseUrl }}</link>
     </image>
     <itunes:owner>
@@ -28,11 +28,11 @@
     <pubDate>{{ .Site.LastChange.Format $dateFormat }}</pubDate>
     <title>{{ .Site.Title }}</title>
     <itunes:author>{{ .Site.Title }}</itunes:author>
-    <description>{{ .Site.Params.description }}</description>
-    <itunes:summary>{{ .Site.Params.summary }}</itunes:summary>
-    <itunes:subtitle>{{ .Site.Params.description }}</itunes:subtitle>
+    <description>{{ .Site.Params.itunesdescription }}</description>
+    <itunes:summary>{{ .Site.Params.itunesdescription }}</itunes:summary>
+    <itunes:subtitle>{{ .Site.Params.itunesdescription }}</itunes:subtitle>
     <lastBuildDate>{{ .Site.LastChange.Format $dateFormat }}</lastBuildDate>
-    {{ range where .Data.Pages "Section" "shows" }}
+    {{ range where .Data.Pages.ByDate.Reverse "Section" "shows" }}
     <item>
       <title>{{ .Title }} with {{ .Render "guest-names" }}</title>
       <description>{{ .Description }}</description>
@@ -40,15 +40,10 @@
       <itunes:summary>{{ .Description }}</itunes:summary>
       <itunes:subtitle>{{ .Params.subtitle }}</itunes:subtitle>
       <enclosure url="{{ .Site.Params.cdnpath }}/shows/{{ .Params.audiourl }}" type="audio/mpeg" length="1" />
-      <guid>{{ .Params.guid }}</guid>
+      <guid>{{ .Permalink }}</guid>
       <itunes:duration>{{ .Params.duration }}</itunes:duration>
       <pubDate>{{ .Date.Format $dateFormat }}</pubDate>
       <itunes:image href="{{ .Site.Params.cdnpath }}/images/fsharp-show-logo-itunes.png" />
-      <image>
-        <url>{{ .Site.Params.cdnpath }}/images/fsharp-show-logo-rss.jpg</url>
-        <title>{{ .Site.Title }}</title>
-        <link>{{ .Permalink }}</link>
-      </image>
     </item>
     {{ end }}
   </channel>

@@ -17,7 +17,7 @@
       </header>
       <footer>
         <ul class="buttons vertical">
-          <li><a href="#latest-shows" class="button fit scrolly">Latest show</a></li>
+          <li><a href="#latest-shows" class="button fit scrolly">Latest shows</a></li>
         </ul>
       </footer>
     </div>
@@ -46,10 +46,10 @@
              id="latest-shows">
 
       <header class="major">
-        <h2>The latest <strong>show</strong></h2>
+        <h2>Latest <strong>shows</strong></h2>
       </header>
 
-      {{ range where .Data.Pages "Section" "shows" | first 4 }}
+      {{ range where .Data.Pages.ByDate.Reverse "Section" "shows" | first 4 }}
 
         <div class="show-summary-front">
             {{ .Render "summary" }}

@@ -6,13 +6,13 @@
 
 <article id="show-main">
   <header class="special container">
-    <h2>{{ .Title }}</h2>
+    <h1>{{ .Title }}</h1>
   </header>
 
   <section class="wrapper style4">
 
     <ul id="list">
-      {{ range where .Data.Pages "Section" "shows" }}
+      {{ range where .Data.Pages.ByDate.Reverse "Section" "shows" }}
         {{ .Render "summary"}}
       {{ end }}
     </ul>

@@ -12,7 +12,7 @@
     <div class="8u 12u(2)">
     <header>
       <a itemprop="url" href="{{ .Permalink }}">
-        <h3 itemprop="name">{{ .Title }}</h3>
+        <h3 itemprop="name">{{ .Params.show }} - {{ .Title }}</h3>
         <p>with {{ .Render "guest-names" }}</p>
       </a>
     </header>

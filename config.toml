@@ -5,6 +5,7 @@ disqusShortname = "fsharpshow"
 
 [params]
   description = "A podcast dedicated to F#"
+  itunesdescription = "A podcast dedicated to F# (fsharp)"
   summary = "A podcast dedicated to F#"
   hostsname = "Troy Kershaw"
   hostsurl = "http://troykershaw.com"
